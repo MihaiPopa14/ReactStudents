@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import React, { useState } from "react";
+
+import AddStudent from "./components/AddStudent";
+import CheckGrades from "./components/CheckGrades";
+import GradeStudent from "./components/GradeStudent";
+import Main from "./components/Main";
+import ViewStudents from "./components/ViewStudents";
+import logo from "./logo.svg";
 
 function App() {
+  const [addStudent, setAddStudent] = useState(false);
+  const [showMain, setShowMain] = useState(true);
+
+  const showAddStudent = () => {
+    setAddStudent(true);
+    setShowMain(false);
+  };
+
+  //<GradeStudent></GradeStudent>
+  //<ViewStudents></ViewStudents>
+  //<CheckGrades></CheckGrades>
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {showMain && (
+        <Main setAddStudent={setAddStudent} setShowMain={setShowMain} />
+      )}
+      {addStudent && <AddStudent />}
+    </>
   );
 }
 
