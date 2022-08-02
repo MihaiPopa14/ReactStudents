@@ -1,9 +1,10 @@
-import './ViewStudents.css'
+import "./ViewStudents.css";
 
+import { Link } from "react-router-dom";
 import React from "react";
 
-const ViewStudents = () =>{
-  return(
+const ViewStudents = () => {
+  return (
     <div className="container">
       <div className="mainContent">
         <h1>Student List</h1>
@@ -33,9 +34,12 @@ const ViewStudents = () =>{
             </tr>
           </tbody>
         </table>
+        <Link to={"/"}>
+          <button>Back</button>
+        </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ViewStudents
+export default ViewStudents;

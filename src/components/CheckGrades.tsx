@@ -1,5 +1,6 @@
 import "./CheckGrades.css";
 
+import { Link } from "react-router-dom";
 import React from "react";
 
 const CheckGrades = () => {
@@ -34,6 +35,9 @@ const CheckGrades = () => {
             </tr>
           </tbody>
         </table>
+        <Link to={"/"}>
+          <button>Back</button>
+        </Link>
       </div>
     </div>
   );

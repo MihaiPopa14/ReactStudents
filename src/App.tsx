@@ -10,24 +10,12 @@ import ViewStudents from "./components/ViewStudents";
 import logo from "./logo.svg";
 
 function App() {
-  const [addStudent, setAddStudent] = useState(false);
-  const [showMain, setShowMain] = useState(true);
-
-  const showAddStudent = () => {
-    setAddStudent(true);
-    setShowMain(false);
-  };
-
-  //<GradeStudent></GradeStudent>
-  //<ViewStudents></ViewStudents>
-  //<CheckGrades></CheckGrades>
   return (
-    <>
-      {showMain && (
-        <Main setAddStudent={setAddStudent} setShowMain={setShowMain} />
-      )}
-      {addStudent && <AddStudent />}
-    </>
+    <Main></Main>
+    //<AddStudent />
+    //<GradeStudent></GradeStudent>
+    //<ViewStudents></ViewStudents>
+    //<CheckGrades></CheckGrades>
   );
 }
 
