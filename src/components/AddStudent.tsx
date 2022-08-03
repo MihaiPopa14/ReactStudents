@@ -1,7 +1,7 @@
-import "./AddStudent.css";
+import './AddStudent.css';
 
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 const AddStudent = () => {
   return (
@@ -15,7 +15,7 @@ const AddStudent = () => {
           <input type="text" />
           <input type="submit" value="Submit" />
         </form>
-        <Link to={"/"}>
+        <Link to={'/'}>
           <button>Back</button>
         </Link>
       </div>

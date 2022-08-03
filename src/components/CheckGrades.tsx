@@ -7,8 +7,12 @@ const CheckGrades = () => {
   return (
     <div className="container">
       <div className="mainContent">
-        <h1>Grades</h1>
-        <h3>Student name</h3>
+        <h1 className="gradesTitle">Grades</h1>
+        <div className="studentSearch">
+          <label htmlFor="">Student name</label>
+          <input type="text" />
+          <button className="searchButton">Search</button>
+        </div>
         <table className="style-table">
           <thead>
             <tr>
@@ -36,7 +40,7 @@ const CheckGrades = () => {
           </tbody>
         </table>
         <Link to={"/"}>
-          <button>Back</button>
+          <button className="backButton">Back</button>
         </Link>
       </div>
     </div>

@@ -56,7 +56,7 @@
   border-bottom: 2px solid #243b55;
 }
 
-button{
+.backButton{
   width: 10rem;
   height: 40px;
   font-size: 20px;
