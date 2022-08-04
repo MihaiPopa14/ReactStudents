@@ -1,7 +1,7 @@
-import "./CheckGrades.css";
+import './CheckGrades.css';
 
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 const CheckGrades = () => {
   return (
@@ -39,7 +39,7 @@ const CheckGrades = () => {
             </tr>
           </tbody>
         </table>
-        <Link to={"/"}>
+        <Link to={'/'}>
           <button className="backButton">Back</button>
         </Link>
       </div>

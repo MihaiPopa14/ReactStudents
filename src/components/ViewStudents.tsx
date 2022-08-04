@@ -1,9 +1,31 @@
-import "./ViewStudents.css";
+import './ViewStudents.css';
 
-import { Link } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from 'react';
+
+import { Link } from 'react-router-dom';
+import { Student } from '../types/Student';
+import ky from 'ky';
 
 const ViewStudents = () => {
+  const [students, setStudent] = useState<Array<Student>>([]);
+  useEffect(() => {
+    const fetchStudentData = async () => {
+      const response: Array<Student> = await ky.get('http://localhost:5000/students').json();
+      console.log(response);
+      setStudent(response);
+    };
+    fetchStudentData();
+  }, []);
+
+  const renderStudents = students.map((student, index) => {
+    return (
+      <tr key={`rowKey-${index}`}>
+        {/* <th>{student.id}</th> */}
+        <th>{student.name}</th>
+        <th>{student.classNr}</th>
+      </tr>
+    );
+  });
   return (
     <div className="container">
       <div className="mainContent">
@@ -11,30 +33,14 @@ const ViewStudents = () => {
         <table className="style-table">
           <thead>
             <tr>
-              <th>ID</th>
+              {/* <th>ID</th> */}
               <th>Name</th>
               <th>Class number</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th>123</th>
-              <th>Lorem.</th>
-              <th>2</th>
-            </tr>
-            <tr>
-              <th>345</th>
-              <th>sdadsad</th>
-              <th>12</th>
-            </tr>
-            <tr>
-              <th>567</th>
-              <th>Lords</th>
-              <th>6</th>
-            </tr>
-          </tbody>
+          <tbody>{renderStudents}</tbody>
         </table>
-        <Link to={"/"}>
+        <Link to={'/'}>
           <button>Back</button>
         </Link>
       </div>
