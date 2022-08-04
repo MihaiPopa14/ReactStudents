@@ -38,8 +38,6 @@ const AddStudent = () => {
       })
       .json();
 
-    //validate
-
     console.log(response);
     event.preventDefault();
   };
