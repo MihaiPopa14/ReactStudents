@@ -19,12 +19,21 @@ const AddStudent = () => {
 
   const handleSubmit = async (event: any) => {
     //validate
+    const stName = event.target.elements.studentName.value;
+    const stClass = event.target.elements.studentClassNr.value;
+    if (stName.trim() === '' || stName.length < 3) {
+      alert('Name is required and it should not be less than 3 characters!');
+      return;
+    } else if (isNaN(stClass) || stClass < 1 || stClass > 12) {
+      alert('Class should be a number between 1 and 12!');
+      return;
+    }
 
     const response: Array<Student> = await ky
       .post('http://localhost:5000/students', {
         json: {
-          name: event.target.elements.studentName.value,
-          classNr: event.target.elements.studentClassNr.value
+          name: stName,
+          classNr: stClass
         }
       })
       .json();
